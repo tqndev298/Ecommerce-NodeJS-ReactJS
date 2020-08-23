@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const AdminDashboard = () => {
   const {
-    user: { _id, name, email, role },
+    user: { /*_id,*/ name, email, role },
   } = isAuthenticated();
 
   const adminLinks = () => {
@@ -14,12 +14,12 @@ const AdminDashboard = () => {
         <h4 className="card-header">Admin Links</h4>
         <ul className="list-group">
           <li className="list-group-item">
-            <Link className="nav-link" to="/creat/category">
+            <Link className="nav-link" to="/create/category">
               Create Category
             </Link>
           </li>
           <li className="list-group-item">
-            <Link className="nav-link" to="/creat/product">
+            <Link className="nav-link" to="/create/product">
               Create Product
             </Link>
           </li>
@@ -41,7 +41,6 @@ const AdminDashboard = () => {
       </div>
     );
   };
-  
 
   return (
     <Layout
@@ -51,9 +50,7 @@ const AdminDashboard = () => {
     >
       <div className="row">
         <div className="col-3">{adminLinks()}</div>
-        <div className="col-9">
-          {adminInfo()}
-        </div>
+        <div className="col-9">{adminInfo()}</div>
       </div>
     </Layout>
   );
